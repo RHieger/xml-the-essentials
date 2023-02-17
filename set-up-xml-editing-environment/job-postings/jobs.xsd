@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!-- This is an XML schema for the file job_postings.xml, created as part of XML: The Essentials.  The comments included in the file help break down which sections of the file focus on what type of declarations. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- Simple Elements -->
+
+	<xs:element name="title" type="xs:string" />
+	<xs:element name="salary" type="xs:string" />
+	<xs:element name="type" type="xs:string" />
+	<xs:element name="department" type="xs:string" />
+	<xs:element name="description" type="xs:string" />
+	<xs:element name="minimum-qualifications" type="xs:string" />
+	<xs:element name="preferred-qualifications" type="xs:string" />
+	<xs:element name="availability" type="xs:string" />
+	<xs:element name="begin-date" type="xs:string" />
+
+	<!-- Attributes -->
+
+	<xs:attribute name="posting-date" type="xs:string" />
+	<xs:attribute name="id" type="xs:integer" />
+
+	<!-- Complex Elements -->
+
+	<xs:element name="job">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="title" />
+				<xs:element ref="salary" />
+				<xs:element ref="type" />
+				<xs:element ref="department" />
+				<xs:element ref="description" />
+				<xs:element ref="minimum-qualifications" />
+				<xs:element ref="preferred-qualifications" />
+				<xs:element ref="availability" />
+				<xs:element ref="begin-date" />
+			</xs:sequence>
+			<xs:attribute ref="id" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="midwest-job-listing">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="job" maxOccurs="unbounded" />
+			</xs:sequence>
+			<xs:attribute ref="posting-date" use="required" />
+		</xs:complexType>
+	</xs:element>
+	
+</xs:schema>
