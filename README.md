@@ -4,4 +4,4 @@
 
 This repository contains all the course work from **_XML: The Essentials (IT Training)_** provided as free online self-paced course.
 
-For further information consult the [wiki](./home)
+For further information consult the [wiki](./home).
